@@ -13,10 +13,28 @@
 	<title>Sitio de peliculas</title>
 </head>
 <body>
-	<div class="contenedor" id="contenedor"></div>
+	<main>
+		<div class="barra">
+			<nav class="navbar bg-body-tertiary">
+				<div class="container-fluid">
+				  <a class="navbar-brand logo" id="logo">Peliculas</a>
+				  <form class="d-flex" role="search" onsubmit="buscarPeliculas(event)" >
+					<input class="form-control me-2" type="search" placeholder="Busca tu pelicula" aria-label="Search" id="search-input">
+					<button class="btn btn-buscar" type="submit" id="buscar">Buscar</button>
+				  </form>
+				</div>
+			  </nav>
+		</div>
+		<div class="contenedor" id="contenedor"></div>
+		<div  class="contenedor" id="peliculasBuscadas"></div>
+		
+	</main>
+	
 
 
 
 	<script src="app.js"></script>
+	
+
 </body>
 </html>

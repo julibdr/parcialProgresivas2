@@ -14,14 +14,13 @@ const cargarPeliculas = async () => {
                 <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">${pelicula.title}</h5>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="#" class="btn btn-peliculas">Ver detalles</a>
                 </div>
                 </div>
            
                 
                 `;
       });
-
       document.getElementById("contenedor").innerHTML = peliculas;
     } else if (respuesta.status === 401) {
       console.log("Pusiste la llave mal");
@@ -33,5 +32,61 @@ const cargarPeliculas = async () => {
   } catch (error) {
     console.log(error);
   }
+  const btnBuscar = document.getElementById('buscar');
+  const peliculasBuscadas = document.getElementById('peliculasBuscadas');
+  btnBuscar.addEventListener('click', buscarPeliculas);
+  async function buscarPeliculas(e) {
+    e.preventDefault();
+    const searchInput = document.getElementById('search-input').value;
+  
+    try {
+      const respuesta = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=47e33bf29ef2fc5eaefdc1cd1ed4b0df&language=es-MX&query=${searchInput}`
+      );
+  
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        document.getElementById("contenedor").style.display = "none";
+        verPeliculas(datos.results);
+      } else {
+        console.log('Error al buscar películas');
+      }
+    } catch (error) {
+      console.error('Error al buscar películas:', error);
+    }
+  }
+ 
+  function verPeliculas(pelicula) {
+    
+   peliculasBuscadas.innerHTML = '';
+  
+    if (pelicula.length === 0) {
+      peliculasBuscadas.textContent = 'No se encontraron películas.';
+    } else {
+      pelicula.forEach((pelicula) => {
+        const pElement = document.createElement('div');
+        pElement.innerHTML = `
+        <div class="card" style="width: 15rem;">
+        <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${pelicula.title}</h5>
+        <a href="#" class="btn btn-peliculas">Ver detalles</a>
+        </div>
+        </div>
+        `;
+        peliculasBuscadas.appendChild(pElement);
+      });
+      const volverBtn = document.createElement('button');
+      volverBtn.textContent = 'Volver';
+      volverBtn.className = 'btn btn-volver';
+      volverBtn.addEventListener('click', () => {
+      peliculasBuscadas.style.display = "none";
+       document.getElementById("contenedor").style.display = "grid";
+      });
+      peliculasBuscadas.append(volverBtn);
+    }
+  }
 };
 cargarPeliculas();
+
+

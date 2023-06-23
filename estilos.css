@@ -3,6 +3,13 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+/* PALETA DE COLORES
+.Children's-Book-|-Era-Uma-Vez-O-Meu-Quarto-1-hex { color: #4C3073; }
+.Children's-Book-|-Era-Uma-Vez-O-Meu-Quarto-2-hex { color: #065473; }
+.Children's-Book-|-Era-Uma-Vez-O-Meu-Quarto-3-hex { color: #61A641; }
+.Children's-Book-|-Era-Uma-Vez-O-Meu-Quarto-4-hex { color: #F2D57E; }
+.Children's-Book-|-Era-Uma-Vez-O-Meu-Quarto-5-hex { color: #F2220F; } */
+
 
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -34,4 +41,19 @@ body {
 	margin-bottom: 10px;
 	border-radius: 15px;
 }
-
+.btn-peliculas{
+	background-color: #065473;
+	color: white;
+}
+.barra{
+	background-color: #F2D57E;
+}
+.logo{
+	color: #4C3073;
+	text-transform: uppercase;
+	margin: 15px;
+}
+.btn-buscar, .btn-volver{
+	background-color: #065473;
+	color: white;
+}
