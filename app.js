@@ -81,7 +81,7 @@ const cargarPeliculas = async () => {
       volverBtn.className = 'btn btn-volver';
       volverBtn.addEventListener('click', () => {
       peliculasBuscadas.style.display = "none";
-       document.getElementById("contenedor").style.display = "grid";
+       document.getElementById("detalle");
       });
       peliculasBuscadas.append(volverBtn);
     }
