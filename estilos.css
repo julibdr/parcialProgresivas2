@@ -57,6 +57,14 @@ body {
 	background-color:rgb(41, 41, 41);
 	color: rgb(255, 255, 255);
 }
+.btn-volver{
+	margin-left: 8%;
+	background-color:#f2f2f2;
+}
+.btn-volver:hover{
+	background-color: #d9ff00;
+	color:black;
+}
 .barra{
 	background-color: #242322;
 }
@@ -68,4 +76,8 @@ body {
 .btn-buscar{
 	background-color: #d9ff00;
 	color: rgb(0, 0, 0);
+}
+.detalleCard{
+	padding: 8px!important ;
+	margin: auto;
 }

@@ -20,14 +20,20 @@ const verDetalles = async () =>{
             const poster = datos.poster_path;
             div.innerHTML="";
             div.innerHTML=`
-            <div class="card" style="width: 15rem;">
-                <img src="https://image.tmdb.org/t/p/w500/${poster}" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">${titulo}</h5>
-                <p class="descripcion">${descripcion}}</p>
-                <p class="descripcion">${anoLanzamiento}</p>
+                <div class="card mb-3 detalleCard" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                  <img src="https://image.tmdb.org/t/p/w500/${poster}"class="img-fluid rounded-start" alt="${titulo}">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">${titulo}</h5>
+                      <p class="card-text">${descripcion}</p>
+                     <p class="descripcion">Año de lanzamiento: ${anoLanzamiento}</p>
+                    </div>
+                  </div>
                 </div>
-                </div>
+              </div>
                 `;
         } else if (respuesta.status === 401) {
           console.log("Pusiste la llave mal");

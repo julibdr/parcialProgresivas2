@@ -11,7 +11,7 @@ const cargarPeliculas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
                 <div class="card" style="width: 15rem;">
-                <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="...">
+                <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
                 <div class="card-body">
                 <h5 class="card-title">${pelicula.title}</h5>
                 <a href="detalle.html?id=${pelicula.id}" class="btn btn-peliculas">Ver detalles</a>
@@ -67,10 +67,10 @@ const cargarPeliculas = async () => {
         const pElement = document.createElement('div');
         pElement.innerHTML = `
         <div class="card" style="width: 15rem;">
-        <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="...">
+        <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
         <div class="card-body">
         <h5 class="card-title">${pelicula.title}</h5>
-        <a href="#" class="btn btn-peliculas">Ver detalles</a>
+        <a href="detalle.html?id=${pelicula.id}" class="btn btn-peliculas">Ver detalles</a>
         </div>
         </div>
         `;
