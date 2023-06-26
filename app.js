@@ -95,7 +95,7 @@ const cargarPeliculas = async () => {
   }
   function favoritos() {
     const likeBtns = document.querySelectorAll(".like_btn");
-    const listaFavoritos = [];
+    let listaFavoritos=[];
     likeBtns.forEach((likeBtn) => {
       const likeIcon = likeBtn.querySelector("span#icon");
       const peliculaId = likeBtn.dataset.peliculaId;
@@ -117,11 +117,9 @@ const cargarPeliculas = async () => {
       });
     });
   }
- favoritos()
+  favoritos();
 
 };
 cargarPeliculas();
-
-
 
    
