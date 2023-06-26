@@ -14,7 +14,7 @@ const cargarPeliculas = async () => {
                 <div class="card" style="width: 15rem;">
                 <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
                 <div class="card-body">
-                <button class="like_btn">
+                <button class="like_btn" data-pelicula-id="${pelicula.id}">
                 <span id="icon"><i class="bi bi-heart"></i></span>
                 </button>
                 <h5 class="card-title">${pelicula.title}</h5>
@@ -74,7 +74,7 @@ const cargarPeliculas = async () => {
         <div class="card-body">
         <button class="like_btn">
                 <span id="icon"><i class="bi bi-heart"></i></span>
-                </button>
+        </button>
         <h5 class="card-title">${pelicula.title}</h5>
         <a href="detalle.html?id=${pelicula.id}" class="btn btn-peliculas">Ver detalles</a>
         </div>
@@ -90,26 +90,35 @@ const cargarPeliculas = async () => {
        document.getElementById("detalle");
       });
       peliculasBuscadas.append(volverBtn);
+      favoritos();
     }
   }
   function favoritos() {
     const likeBtns = document.querySelectorAll(".like_btn");
+    const listaFavoritos = [];
     likeBtns.forEach((likeBtn) => {
       const likeIcon = likeBtn.querySelector("span#icon");
+      const peliculaId = likeBtn.dataset.peliculaId;
       let clicked = false;
       likeBtn.addEventListener("click", () => {
-        console.log('Funciona');
         clicked = !clicked;
         if (clicked) {
           likeIcon.innerHTML = `<i class="bi bi-heart-fill text-danger"></i>`;
+          listaFavoritos.push(peliculaId);
+          console.log(listaFavoritos);
         } else {
           likeIcon.innerHTML = `<i class="bi bi-heart"></i>`;
+          const index = listaFavoritos.indexOf(peliculaId);
+        if (index > -1) {
+          listaFavoritos.splice(index, 1);
+           console.log(listaFavoritos);
+        }
         }
       });
     });
   }
-  
  favoritos()
+
 };
 cargarPeliculas();
 
