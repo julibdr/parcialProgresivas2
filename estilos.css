@@ -77,8 +77,16 @@ body {
 	text-transform: uppercase;
 	margin: 15px;
 }
+.logo:hover{
+	color: #ffffff;
+	
+}
 .btn-buscar{
 	background-color: #d9ff00;
+	color: rgb(0, 0, 0);
+}
+.btn-buscar:hover{
+	background-color: #ffffff;
 	color: rgb(0, 0, 0);
 }
 .detalleCard{

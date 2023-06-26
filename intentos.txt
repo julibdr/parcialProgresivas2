@@ -83,3 +83,27 @@
       console.error('Error al buscar películas:', error);
     }
   }
+
+
+
+
+
+  <i class="bi bi-heart-fill"></i>
+
+
+
+
+const likeBtn = document.querySelector(".like_btn");
+let likeIcon = document.querySelector("#icon");
+let clicked = false;
+
+
+ likeBtn.addEventListener("click", () => {
+        if (clicked){
+          clicked = true;
+          likeIcon.innerHTML = `<i class="bi bi-heart-fill"></i>`;
+        }else{
+          clicked = false;
+          likeIcon.innerHTML = `<i class="bi bi-heart"></i>`;
+        }
+      });
