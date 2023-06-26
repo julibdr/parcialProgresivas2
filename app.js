@@ -72,6 +72,9 @@ const cargarPeliculas = async () => {
         <div class="card" style="width: 15rem;">
         <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
         <div class="card-body">
+        <button class="like_btn">
+                <span id="icon"><i class="bi bi-heart"></i></span>
+                </button>
         <h5 class="card-title">${pelicula.title}</h5>
         <a href="detalle.html?id=${pelicula.id}" class="btn btn-peliculas">Ver detalles</a>
         </div>
@@ -98,7 +101,7 @@ const cargarPeliculas = async () => {
         console.log('Funciona');
         clicked = !clicked;
         if (clicked) {
-          likeIcon.innerHTML = `<i class="bi bi-heart-fill"></i>`;
+          likeIcon.innerHTML = `<i class="bi bi-heart-fill text-danger"></i>`;
         } else {
           likeIcon.innerHTML = `<i class="bi bi-heart"></i>`;
         }
