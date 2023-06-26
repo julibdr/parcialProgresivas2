@@ -11,6 +11,7 @@ const cargarPeliculas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
                 <div class="card" style="width: 15rem;">
+                <i class="bi bi-heart iconoFav"></i>
                 <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
                 <div class="card-body">
                 <h5 class="card-title">${pelicula.title}</h5>
