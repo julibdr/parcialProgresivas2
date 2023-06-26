@@ -93,3 +93,7 @@ body {
 	padding: 8px!important ;
 	margin: auto;
 }
+.like_btn{
+	border: none;
+	background-color: white;
+}

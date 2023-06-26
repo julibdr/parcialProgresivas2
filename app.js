@@ -42,24 +42,6 @@ const cargarPeliculas = async () => {
   async function buscarPeliculas(e) {
     e.preventDefault();
     const searchInput = document.getElementById('search-input').value;
-  
-    const likeBtn = document.querySelector(".like_btn");
-    let likeIcon = document.querySelector("#icon");
-    let clicked = false;
-    
-    
-     likeBtn.addEventListener("click", () => {
-            if (clicked){
-              clicked = true;
-              likeIcon.innerHTML = `<i class="bi bi-heart-fill"></i>`;
-              
-            }else{
-              clicked = false;
-              likeIcon.innerHTML = `<i class="bi bi-heart"></i>`;
-              
-            }
-          });
-        
 
     try {
       const respuesta = await fetch(
@@ -77,8 +59,6 @@ const cargarPeliculas = async () => {
       console.error('Error al buscar películas:', error);
     }
   }
-
- 
   function verPeliculas(pelicula) {
     
    peliculasBuscadas.innerHTML = '';
@@ -109,6 +89,24 @@ const cargarPeliculas = async () => {
       peliculasBuscadas.append(volverBtn);
     }
   }
+  function favoritos() {
+    const likeBtns = document.querySelectorAll(".like_btn");
+    likeBtns.forEach((likeBtn) => {
+      const likeIcon = likeBtn.querySelector("span#icon");
+      let clicked = false;
+      likeBtn.addEventListener("click", () => {
+        console.log('Funciona');
+        clicked = !clicked;
+        if (clicked) {
+          likeIcon.innerHTML = `<i class="bi bi-heart-fill"></i>`;
+        } else {
+          likeIcon.innerHTML = `<i class="bi bi-heart"></i>`;
+        }
+      });
+    });
+  }
+  
+ favoritos()
 };
 cargarPeliculas();
 
