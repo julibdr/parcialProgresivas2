@@ -13,7 +13,7 @@ self.addEventListener('install', function(){
             'estilos.css',
             'banner.jpg',
             'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css',
-           'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"',
+            'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"',
             'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css',
         'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'
         ]);
@@ -37,6 +37,6 @@ self.addEventListener('fetch', function(evento){
         // Si falla busco en el cache
         return caches.match( evento.request)
     })
-   
+
     evento.respondWith( respuesta  )
 })
