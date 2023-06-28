@@ -98,6 +98,7 @@ body {
 	padding: 8px!important ;
 	margin: auto;
 }
+
 .like_btn{
 	border: none;
 	background-color: white;
@@ -132,6 +133,17 @@ body {
 	.banner{
 		display: contents;
 		text-align: center;
+	}
+	.card{
+	margin-left: 10%;
+	}
+	.carousel-inner{
+		width: 80%;
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+	.lead{
+		text-align: center !important;
 	}
 }
 
