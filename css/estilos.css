@@ -15,6 +15,11 @@ h1{
 	color: #d9ff00;
 	margin-top: 2%;
 }
+#modo{
+	color: white;
+	font-size:x-large;
+	margin-right: auto;
+}
 
 .banner{
 	margin-left: -10%;
@@ -111,7 +116,23 @@ body {
 	text-decoration: none;
 	margin-right: 15px;
 	width: auto;
+	padding: 15px;
 }
 .btn-vf:hover{
 	color: white;
 }
+
+
+
+
+@media only screen and (max-width: 470px){
+	.contenedor{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.banner{
+		display: contents;
+		text-align: center;
+	}
+}
+
+

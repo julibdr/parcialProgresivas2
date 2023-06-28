@@ -1,3 +1,13 @@
+navigator.serviceWorker.register('../serviceWorker.js');
+const modo = document.getElementById('modo');
+
+addEventListener('online', function(){
+ modo.innerHTML = `<i class="bi bi-wifi"></i>`;
+})
+
+addEventListener('offline', function(){
+  modo.innerHTML = `<i class="bi bi-wifi-off"></i>`;
+})
 
 const cargarPeliculas = async () => {
   try {
