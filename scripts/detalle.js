@@ -18,6 +18,7 @@ const verDetalles = async () =>{
             const descripcion = datos.overview;
             const anoLanzamiento = datos.release_date;
             const poster = datos.poster_path;
+            const idPelicula = datos.id;
             div.innerHTML="";
             div.innerHTML=`
                 <div class="card mb-3 detalleCard" style="max-width: 540px;">
@@ -27,6 +28,9 @@ const verDetalles = async () =>{
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
+                    <button class="like_btn" data-pelicula-id="${idPelicula}">
+                    <span id="icon"><i class="bi bi-heart"></i></span>
+                    </button>
                       <h5 class="card-title">${titulo}</h5>
                       <p class="card-text">${descripcion}</p>
                      <p class="descripcion">Año de lanzamiento: ${anoLanzamiento}</p>
@@ -35,6 +39,7 @@ const verDetalles = async () =>{
                 </div>
               </div>
                 `;
+            favoritos();    
         } else if (respuesta.status === 401) {
           console.log("Pusiste la llave mal");
         } else if (respuesta.status === 404) {
@@ -45,6 +50,7 @@ const verDetalles = async () =>{
       } catch (error) {
         console.log(error);
       } 
+      
 }
 volver.addEventListener('click', () => {
     window.location.href = 'index.html';
